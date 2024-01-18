@@ -4,15 +4,15 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 from Datasets import datasets
-from model import GeSeNet
+from model import MMSegNet
 from torch.autograd import Variable
 from PIL import Image
 from rgb2ycbcr import RGB2YCrCb, YCrCb2RGB
 import time
 
 def main():
-    model_path = './model/GeSeNet.pth'
-    model = GeSeNet(output=1)
+    model_path = './model/MMSegNet.pth'
+    model = MMSegNet(output=1)
     device = torch.device("cuda:{}".format(args.gpu) if torch.cuda.is_available() else "cpu")
     if args.gpu >= 0:
         model.to(device)
